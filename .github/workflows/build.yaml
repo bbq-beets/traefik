@@ -21,7 +21,7 @@ env:
 jobs:
 
   build-webui:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ inputs.chosen-runner }}
 
     steps:
       - name: Check out code
@@ -41,10 +41,7 @@ jobs:
           path: webui.tar.gz
 
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-20.04, macos-latest, windows-latest ]
+    runs-on: ${{ inputs.chosen-runner }}
     needs:
       - build-webui
     defaults:
