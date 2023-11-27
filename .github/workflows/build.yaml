@@ -1,6 +1,6 @@
 name: Build Binaries
 
-run-name: Running perf test for ${{ inputs.chosen-runner }}
+run-name: Running smoke test on ${{ inputs.chosen-runner }}
 on:
   workflow_dispatch:
     inputs:
