@@ -14,7 +14,7 @@ on:
         - 8-core-windows-benchmark-perf-test
 jobs:
   docker:
-    runs-on: ${{ inputs.chosen-runner }
+    runs-on: ${{ inputs.chosen-runner }}
     steps:
     - name: Get docker version
       run: docker --version
