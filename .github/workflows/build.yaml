@@ -27,8 +27,8 @@ jobs:
       - name: Install make for arm64
         run: |
           sudo apt-get update \
-          sudo apt-get install make:arm64 \
-          make --version
+            sudo apt-get install -y make:arm64 \
+            make --version
       - name: Check out code
         uses: actions/checkout@v3
         with:
