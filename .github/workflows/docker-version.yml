@@ -1,0 +1,20 @@
+name: Docker Version
+run-name: Running smoke test on ${{ inputs.chosen-runner }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      chosen-runner:
+        required: true
+        type: choice
+        options:
+        - alex-arm64-linux
+        - alex-arm64-windows
+        - 4-core-ubuntu-benchmark-perf-test
+        - 8-core-windows-benchmark-perf-test
+jobs:
+  docker:
+    runs-on: ${{ inputs.chosen-runner }
+    steps:
+    - name: Get docker version
+      run: docker --version
